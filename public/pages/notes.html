@@ -6,11 +6,18 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <div class="page-title">
-      <h1>Notes</h1>
-    </div>
-    <div class="page-link">
-        <a href="./public/index.html" class="notes-link">Home Page</a>
-      </div>
+    <header>
+      <h1 class="page-title">Notes</h1>
+      <a href="../index.html" class="page-link">Home Page</a>
+    </header>
+    <section class="left-col">
+        <div class="existing-notes">
+            <ul></ul>
+        </div>
+    </section>
+    <section class="right-col">
+        <input type="text" id="note-name" placeholder="Enter the name of your new Note...">
+        <input type="text" id="note-text" placeholder="Enter note text here...">
+    </section>
   </body>
 </html>
