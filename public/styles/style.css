@@ -1,18 +1,47 @@
 .left-col {
     border: 2px dotted red;
+    background-color: burlywood;
 }
 .right-col {
     border: 2px dotted blue;
+    background-color: brown;
 }
 
-/* .page-title {
-    border
+#note-name {
+    border: 2px double black;
+    background-color: antiquewhite;
+    padding-bottom: 25%;
+}
+
+#note-text {
+    border: 2px double black;
+    background-color: antiquewhite;
+    padding-bottom: 75%;
+}
+
+.save-btn {
+    border: 2px double black;
+    background-color: black;
+    color: white;
+    padding-bottom: 25%;
+}
+
+button:hover {
+    background-color:aquamarine;
+    color:black;
+}
+.page-title {
+    border: 2px solid yellow;
 }
 
 .page-link {
-
-} */
+    border: 2px solid orange;
+}
 
 header {
     border: 2px dotted blue;
 }
+
+.container {
+    column-count: 2;
+  }
