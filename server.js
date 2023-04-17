@@ -39,7 +39,7 @@ app.post('/api/db', (req, res) => {
 
       const noteString = JSON.stringify(newNote);
 
-      fs.writeFile(`./db/db.json`, noteString, (err) =>
+      fs.appendFile(`./db/db.json`, noteString, (err) =>
       err
         ? console.error(err)
         : console.log(
