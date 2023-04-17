@@ -19,7 +19,7 @@
     padding-bottom: 75%;
 }
 
-.save-btn {
+#save-btn {
     border: 2px double black;
     background-color: black;
     color: white;
