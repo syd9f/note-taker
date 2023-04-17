@@ -39,10 +39,13 @@ saveButton.addEventListener('click', (e) => {
     .catch((err) => console.error(err));
 });
 
-
-// post a new note
-  
-  // update a note
+const noteEl = (data) => {
+    const newNoteButton = document.createElement('button');
+    const noteHeader = newNoteButton.appendChild(`${data.title}`);
+    
+    savedNotes.appendChild = newNoteButton;
+    savedNotes.appendChild = noteHeader;
+};
 
 // get saved notes from db
 // const getNotes = async () => {
