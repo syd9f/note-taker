@@ -4,23 +4,28 @@ const saveButton = document.getElementById('save-btn');
 const newNoteTitle = document.getElementById('note-name');
 const newNoteText = document.getElementById('note-text');
 
+// disable save button on page load
+saveButton.style.display = "none";
+
+// show save button if input is added to title and body of note
+if (newNoteTitle.value + newNoteText.value != "") {
+  saveButton.style.display = "visible";
+};
+
 // create element for displaying saved note titles
 const createNote = (note) => {
-  // create card for note
+  // create card for note link
   cardEl = document.createElement('div');
   cardEl.classList.add('card');
+
+  // TO DO: create delete button for card
   
-  // create note header
+  // create note title header
   const noteTitle = document.createElement('h4');
   noteTitle.innerHTML = `${note.title} </br>`;
-  
-  // create note body
-  const noteBody = document.createElement('div');
-  noteBody.innerHTML = `<p>${note.body}</p>`;
 
   // append header and body to card
   cardEl.appendChild(noteTitle);
-  cardEl.appendChild(noteBody);
 
   // append card to notes container in DOM
   savedNotes.appendChild(cardEl);
