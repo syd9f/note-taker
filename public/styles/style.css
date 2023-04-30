@@ -31,10 +31,13 @@ button:hover {
     color:black;
 }
 
-button {
+.card {
     background-color: white;
+    color: darkblue;
+}
+
+.card h4 {
     color: black;
-    border: 2px double black;
 }
 
 .page-title {

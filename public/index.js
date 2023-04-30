@@ -4,13 +4,29 @@ const saveButton = document.getElementById('save-btn');
 const newNoteTitle = document.getElementById('note-name');
 const newNoteText = document.getElementById('note-text');
 
-const savedNoteEl = (data) => {
-  const newNoteButton = document.createElement('button');
-  newNoteButton.textContent = `${data.body.title}`;
+// create element for displaying saved note titles
+const createNote = (note) => {
+  // create card for note
+  cardEl = document.createElement('div');
+  cardEl.classList.add('card');
   
-  savedNotes.appendChild(newNoteButton);
+  // create note header
+  const noteTitle = document.createElement('h4');
+  noteTitle.innerHTML = `${note.title} </br>`;
+  
+  // create note body
+  const noteBody = document.createElement('div');
+  noteBody.innerHTML = `<p>${note.body}</p>`;
+
+  // append header and body to card
+  cardEl.appendChild(noteTitle);
+  cardEl.appendChild(noteBody);
+
+  // append card to notes container in DOM
+  savedNotes.appendChild(cardEl);
 };
 
+// Get existing notes from the server
 const getNotes = () =>
   fetch('api/db', {
     method: 'GET',
@@ -24,12 +40,8 @@ const getNotes = () =>
     console.error('Error getting notes:', error);
 });
 
-// When the page loads, get all the saved notes
-getNotes().then((data) => data.forEach((note) => savedNoteEl(note)));
-
-// Helper function that accepts a `note` object, sends a POST request and returns the result
+// Helper function for saving a new note to the page
 const saveNote = (note) =>
-  // Fetch accepts a URL and an options object where you can declare the HTTP method, the request body, and any headers.
   fetch('/api/db', {
     method: 'POST',
     headers: {
@@ -40,11 +52,14 @@ const saveNote = (note) =>
     .then((res) => res.json())
     .then((data) => {
       console.log('Successful POST request:', data);
-      return data;
+      createNote(note);
     })
     .catch((error) => {
       console.error('Error in POST request:', error);
     });
+
+// When the page loads, get all the saved notes
+getNotes().then((data) => data.forEach((note) => createNote(note)));
 
 // Listen for when the note is saved
 saveButton.addEventListener('click', (e) => {
@@ -61,37 +76,3 @@ saveButton.addEventListener('click', (e) => {
     .then((data) => alert(`Note saved! Note Title: ${data.body.title}`))
     .catch((err) => console.error(err));
 });
-
-
-// get saved notes from db
-// const getNotes = async () => {
-//   const result = await fetch('/api/db', {
-//     method: 'GET',
-//   });
-//   const json = await result.json();
-//   return json;
-// };
-
-// render notes to page
-// const renderNotes = (note) => {
-    // const cardEl = document.createElement('div');
-    // const cardBodyEl = document.createElement('div');
-    // const cardBodyTitle = document.createElement('div');
-  
-    // cardEl.classList.add('card', 'p-5');
-    // cardBodyEl.classList.add('card-body', 'p-5');
-    // cardBodyTitle.classList.add('card-header', 'card-title', 'link');
-  
-    // cardBodyTitle.innerHTML = `<a href=${note.url}>${note.note}</a>`;
-    // cardBodyEl.innerText = note.definition;
-    // savedNotes.appendChild(cardBodyTitle);
-    // savedNotes.appendChild(cardBodyEl);
-// };
-  
-// starts functions when button is clicked
-// const buttonHandler = () =>
-//     getNotes().then((response) => response.forEach((note) => renderNotes(note)));
-
-// // event listener on save button
-// saveButton.addEventListener('click', buttonHandler);
-
