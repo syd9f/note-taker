@@ -1,10 +1,11 @@
 .left-col {
-    border: 2px dotted red;
-    background-color: burlywood;
+    border: 2px solid black;
+    background-color: darkolivegreen;
+    overflow: scroll;
 }
 .right-col {
-    border: 2px dotted blue;
-    background-color: brown;
+    border: 2px solid black;
+    background-color: darkgrey;
 }
 
 #note-name {
@@ -23,7 +24,6 @@
     border: 2px double black;
     background-color: black;
     color: white;
-    padding-bottom: 25%;
 }
 
 button:hover {
@@ -40,18 +40,20 @@ button:hover {
     color: black;
 }
 
-.page-title {
-    border: 2px solid yellow;
-}
-
 .page-link {
     border: 2px solid orange;
+    padding: 2px;
+    background-color: aliceblue;
 }
 
 header {
-    border: 2px dotted blue;
+    background-color:darkcyan;
 }
 
 .container {
     column-count: 2;
-  }
+}
+
+h1 {
+    font-size: 50px;
+}
