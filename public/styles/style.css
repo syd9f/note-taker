@@ -30,6 +30,13 @@ button:hover {
     background-color:aquamarine;
     color:black;
 }
+
+button {
+    background-color: white;
+    color: black;
+    border: 2px double black;
+}
+
 .page-title {
     border: 2px solid yellow;
 }
