@@ -31,8 +31,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 Requires Node.js and Express
 
 ## Usage
-Deployed to Heroku
-<!-- Add link to deployed page -->
+
+[Deployed to Heroku](https://note-taker-project-11-columbia.herokuapp.com/)
 
 When opening the application, user will be presented with a welcome screen, and a button to get started:
 
@@ -52,4 +52,5 @@ When the save button is clicked, the new note title will display in the left col
 
 ## Credits
 Used starter code from Columbia Engineering Coding Bootcamp Week 11
+
 Worked on with Tutor: Eric Sayer
